@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpendWise - Personal Finance Tracker">
+    <title>SpendWise | Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2 class="logo">Spend<span>Wise</span></h2>
+
+        <nav>
+            <a href="#dashboard" class="active">Dashboard</a>
+            <a href="#transactions">Transactions</a>
+            <a href="#add-transaction">Add Transaction</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Personal Finance Tracker</p>
+            <small>Spend smart. Save more.</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's your financial overview.</p>
+            </div>
+            <span class="date" id="current-date"></span>
+        </header>
+
+        <section class="summary-cards" id="dashboard">
+
+            <div class="card balance-card">
+                <p>Total Balance</p>
+                <h2 id="balance">KES 0.00</h2>
+            </div>
+
+            <div class="card income-card">
+                <p>Total Income</p>
+                <h2 id="income">KES 0.00</h2>
+            </div>
+
+            <div class="card expense-card">
+                <p>Total Expenses</p>
+                <h2 id="expenses">KES 0.00</h2>
+            </div>
+
+        </section>
+
+        <section class="content-grid">
+
+            <div class="panel" id="add-transaction">
+                <h2>Add Transaction</h2>
+
+                <form id="transaction-form">
+
+                    <label for="description">Description</label>
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="e.g. Monthly salary"
+                        required
+                    >
+
+                    <label for="amount">Amount (KES)</label>
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Education">Education</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="type">Transaction Type</label>
+                    <select id="type" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+
+                    <button type="submit">Add Transaction</button>
+
+                </form>
+            </div>
+
+            <div class="panel" id="transactions">
+                <h2>Recent Transactions</h2>
+
+                <div class="transaction-list" id="transaction-list">
+                    <p class="empty-message">No transactions yet. Add your first transaction!</p>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>© 2026 SpendWise. Manage your money wisely.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
